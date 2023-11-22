@@ -15,4 +15,3 @@ class DataConverters {
         return Priority.values()[index]
     }
 }
-

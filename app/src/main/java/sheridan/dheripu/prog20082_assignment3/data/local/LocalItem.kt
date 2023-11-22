@@ -9,6 +9,6 @@ data class LocalItem(
     val id: Int = 0,
     val name: String,
     val price: Double,
-    val enum: Priority,
+    val priority: Priority,
     val selected: Boolean
 )
