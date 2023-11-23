@@ -17,9 +17,6 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-/**
- * ViewModel to retrieve, update and delete an item from the [ItemsRepository]'s data source.
- */
 @HiltViewModel
 class ItemDetailsViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
@@ -28,10 +25,6 @@ class ItemDetailsViewModel @Inject constructor(
 
     private val itemId: Int = checkNotNull(savedStateHandle[ItemDetailsDestination.itemIdArg])
 
-    /**
-     * Holds the item details ui state. The data is retrieved from [ItemsRepository] and mapped to
-     * the UI state.
-     */
     val uiState: StateFlow<ItemDetailsUiState> =
         itemsRepository.getItemByIdStream(itemId)
             .filterNotNull()
@@ -43,14 +36,7 @@ class ItemDetailsViewModel @Inject constructor(
                 initialValue = ItemDetailsUiState()
             )
 
-    /**
-     * Reduces the item quantity by one and update the [ItemsRepository]'s data source.
-     */
 
-
-    /**
-     * Deletes the item from the [ItemsRepository]'s data source.
-     */
     fun deleteItem() = viewModelScope.launch{
         itemsRepository.deleteItemById(uiState.value.item.id)
     }

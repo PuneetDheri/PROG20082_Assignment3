@@ -1,6 +1,8 @@
 package sheridan.dheripu.prog20082_assignment3.data.repository
 
 import kotlinx.coroutines.flow.Flow
+import sheridan.dheripu.prog20082_assignment3.data.local.LocalItem
+import sheridan.dheripu.prog20082_assignment3.data.local.Priority
 import sheridan.dheripu.prog20082_assignment3.domain.Item
 
 interface ItemsRepository {
@@ -34,5 +36,5 @@ interface ItemsRepository {
 
     suspend fun updateItemSelectedById(id: Int, selected: Boolean)
 
-
+    fun getItemsByPriorityStream(priority: Priority): Flow<List<LocalItem>>
 }

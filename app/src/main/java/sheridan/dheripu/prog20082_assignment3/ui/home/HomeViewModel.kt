@@ -13,18 +13,11 @@ import sheridan.dheripu.prog20082_assignment3.ui.model.ListItemModel
 import sheridan.dheripu.prog20082_assignment3.ui.model.toListItemModel
 import javax.inject.Inject
 
-/**
- * ViewModel to retrieve all items in the Room database.
- */
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val itemsRepository: ItemsRepository
 ) : ViewModel() {
 
-    /**
-     * Holds home ui state. The list of items are retrieved from [ItemsRepository] and mapped to
-     * [HomeUiState]
-     */
     val homeUiState: StateFlow<HomeUiState> =
         itemsRepository.getAllItemsStream()
             .map { list -> HomeUiState(list.map { item -> item.toListItemModel() }) }

@@ -78,7 +78,6 @@ fun ItemDetailsScreen(
     ) { innerPadding ->
         ItemDetailsBody(
             itemDetailsUiState = uiState.value,
-//            onSellItem = { viewModel.reduceQuantityByOne() },
             onDelete = {
                 viewModel.deleteItem()
                 navigateBack()
@@ -93,7 +92,6 @@ fun ItemDetailsScreen(
 @Composable
 private fun ItemDetailsBody(
     itemDetailsUiState: ItemDetailsUiState,
-//    onSellItem: () -> Unit,
     onDelete: () -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -164,6 +162,18 @@ fun ItemDetails(
                     )
                 )
             )
+
+            ItemDetailsRow(
+                labelResID = R.string.priority,
+                itemDetail = item.priority.toString(),
+                modifier = Modifier.padding(
+                    horizontal = dimensionResource(
+                        id = R.dimen
+                            .padding_medium
+                    )
+                )
+            )
+
         }
 
     }

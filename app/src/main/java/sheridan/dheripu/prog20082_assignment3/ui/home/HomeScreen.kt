@@ -44,10 +44,6 @@ import sheridan.dheripu.prog20082_assignment3.ui.theme.PROG20082_Assignment3Them
 import sheridan.dheripu.prog20082_assignment3.ui.navigation.HomeDestination
 
 
-
-/**
- * Entry route for Home screen
- */
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable

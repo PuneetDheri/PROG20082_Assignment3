@@ -39,6 +39,7 @@ fun ItemEntryScreen(
             itemFormUiState = viewModel.uiState,
             onNameChange = viewModel::onNameChange,
             onPriceChange = viewModel::onPriceChange,
+            onPriorityChange = viewModel::onPriorityChange,
             onSaveClick = {
                 viewModel.saveItem()
                 navigateBack()
@@ -62,7 +63,7 @@ private fun ItemEntryScreenPreview() {
                 )
             ),
             onNameChange = {}, onPriceChange = {},
-            onSaveClick = {}
+            onSaveClick = {}, onPriorityChange = {},
         )
     }
 }

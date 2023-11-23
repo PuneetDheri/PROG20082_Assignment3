@@ -13,9 +13,6 @@ import sheridan.dheripu.prog20082_assignment3.ui.model.ItemFormModel
 import sheridan.dheripu.prog20082_assignment3.ui.navigation.ItemEditDestination
 import javax.inject.Inject
 
-/**
- * ViewModel to retrieve and update an item from the [ItemsRepository]'s data source.
- */
 @HiltViewModel
 class ItemEditViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
@@ -33,9 +30,6 @@ class ItemEditViewModel @Inject constructor(
         }
     }
 
-    /**
-     * Update the item in the [ItemsRepository]'s data source
-     */
     fun updateItem() = viewModelScope.launch {
         val formData: ItemFormModel = uiState.itemFormModel
         if (formData.isValid()) {

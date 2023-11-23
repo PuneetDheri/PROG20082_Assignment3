@@ -8,9 +8,6 @@ import sheridan.dheripu.prog20082_assignment3.ui.item.form.FormViewModel
 
 import javax.inject.Inject
 
-/**
- * ViewModel to validate and insert items in the Room database.
- */
 @HiltViewModel
 class ItemEntryViewModel @Inject constructor(
     private val itemsRepository: ItemsRepository

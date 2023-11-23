@@ -18,8 +18,9 @@ interface ItemDao {
     @Query("SELECT * from items WHERE id = :id")
     fun getItemByIdStream(id: Int): Flow<LocalItem?>
 
-    // Specify the conflict strategy as IGNORE, when the user tries to add an
-    // existing Item into the database Room ignores the conflict.
+    @Query("SELECT * from items WHERE priority = :priority ORDER BY name ASC")
+    fun getItemsByPriority(priority: Priority): Flow<List<LocalItem>>
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertItem(item: LocalItem)
 

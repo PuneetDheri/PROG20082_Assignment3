@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import sheridan.dheripu.prog20082_assignment3.R
+import sheridan.dheripu.prog20082_assignment3.data.local.Priority
 import sheridan.dheripu.prog20082_assignment3.item.form.ItemForm
 
 @Composable
@@ -19,6 +20,7 @@ fun ItemFormBody(
     itemFormUiState: ItemFormUiState,
     onNameChange: (String) -> Unit,
     onPriceChange: (String) -> Unit,
+    onPriorityChange: (Priority) -> Unit,
     onSaveClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -30,6 +32,7 @@ fun ItemFormBody(
             itemFormModel = itemFormUiState.itemFormModel,
             onNameChange = onNameChange,
             onPriceChange = onPriceChange,
+            onPriorityChange = onPriorityChange,
             modifier = Modifier.fillMaxWidth()
         )
         Button(
