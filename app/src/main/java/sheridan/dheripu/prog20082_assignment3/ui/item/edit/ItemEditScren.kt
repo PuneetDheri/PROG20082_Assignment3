@@ -33,7 +33,6 @@ fun ItemEditScreen(
         ItemFormBody(
             itemFormUiState = viewModel.uiState,
             onNameChange = viewModel::onNameChange,
-            onPriceChange = viewModel::onPriceChange,
             onPriorityChange = viewModel::onPriorityChange,
             onSaveClick = {
                 viewModel.updateItem()

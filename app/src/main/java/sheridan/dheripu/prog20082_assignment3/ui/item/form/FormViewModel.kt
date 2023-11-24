@@ -17,8 +17,6 @@ abstract class FormViewModel(
     fun onNameChange(newName: String) =
         updateUiState(uiState.itemFormModel.copy(name = newName))
 
-    fun onPriceChange(newPrice: String) =
-        updateUiState(uiState.itemFormModel.copy(price = newPrice))
 
     fun onPriorityChange(newPriority: Priority) =
         updateUiState(uiState.itemFormModel.copy(priority = newPriority))

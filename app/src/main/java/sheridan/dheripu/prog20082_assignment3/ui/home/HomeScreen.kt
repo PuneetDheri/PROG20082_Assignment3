@@ -162,10 +162,7 @@ private fun ShoppingListItem(
                         style = MaterialTheme.typography.titleLarge,
                     )
                     Spacer(Modifier.weight(1f))
-                    Text(
-                        text = item.price,
-                        style = MaterialTheme.typography.titleMedium
-                    )
+
                 }
 
             }
@@ -179,9 +176,9 @@ private fun ShoppingListItem(
 fun HomeBodyPreview() {
     PROG20082_Assignment3Theme {
         HomeBody(listOf(
-            Item(1, "Game", 100.0, Priority.LOW).toListItemModel(),
-            Item(2, "Pen", 200.0, Priority.MEDIUM, true).toListItemModel(),
-            Item(3, "TV", 300.0, Priority.HIGH).toListItemModel()
+            Item(1, "Game",  Priority.LOW).toListItemModel(),
+            Item(2, "Pen",  Priority.MEDIUM, true).toListItemModel(),
+            Item(3, "TV",  Priority.HIGH).toListItemModel()
         ), onItemClick = {}, onToggleSelect = {})
     }
 }
@@ -199,7 +196,7 @@ fun HomeBodyEmptyListPreview() {
 fun ShoppingListItemPreview() {
     PROG20082_Assignment3Theme {
         ShoppingListItem(
-            Item(1, "Game", 100.0, Priority.LOW).toListItemModel(),
+            Item(1, "Game",  Priority.LOW).toListItemModel(),
             onToggleSelect = {}
         )
     }

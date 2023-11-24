@@ -65,7 +65,6 @@ class LocalItemsRepository(
 fun LocalItem.toItem(): Item = Item(
     id = this.id,
     name = this.name,
-    price = this.price,
     priority = this.priority,
     selected = this.selected
 )
@@ -73,7 +72,6 @@ fun LocalItem.toItem(): Item = Item(
 fun Item.toLocalItem(): LocalItem = LocalItem(
     id = this.id,
     name = this.name,
-    price = this.price,
     priority = this.priority,
     selected = this.selected
 )

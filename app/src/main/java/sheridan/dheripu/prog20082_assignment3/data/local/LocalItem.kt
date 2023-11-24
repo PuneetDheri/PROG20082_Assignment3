@@ -8,7 +8,6 @@ data class LocalItem(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     val name: String,
-    val price: Double,
     val priority: Priority,
     val selected: Boolean
 )

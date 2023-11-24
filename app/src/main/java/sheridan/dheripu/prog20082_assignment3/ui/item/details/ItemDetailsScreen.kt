@@ -152,16 +152,7 @@ fun ItemDetails(
                 )
             )
 
-            ItemDetailsRow(
-                labelResID = R.string.price,
-                itemDetail = item.price,
-                modifier = Modifier.padding(
-                    horizontal = dimensionResource(
-                        id = R.dimen
-                            .padding_medium
-                    )
-                )
-            )
+
 
             ItemDetailsRow(
                 labelResID = R.string.priority,
@@ -219,7 +210,6 @@ fun ItemDetailsScreenPreview() {
                 Item(
                 1,
                 "Pen",
-                6.25,
                 priority = Priority.LOW,
             )
             ),onDelete = {})

@@ -19,7 +19,6 @@ import sheridan.dheripu.prog20082_assignment3.item.form.ItemForm
 fun ItemFormBody(
     itemFormUiState: ItemFormUiState,
     onNameChange: (String) -> Unit,
-    onPriceChange: (String) -> Unit,
     onPriorityChange: (Priority) -> Unit,
     onSaveClick: () -> Unit,
     modifier: Modifier = Modifier
@@ -31,7 +30,6 @@ fun ItemFormBody(
         ItemForm(
             itemFormModel = itemFormUiState.itemFormModel,
             onNameChange = onNameChange,
-            onPriceChange = onPriceChange,
             onPriorityChange = onPriorityChange,
             modifier = Modifier.fillMaxWidth()
         )

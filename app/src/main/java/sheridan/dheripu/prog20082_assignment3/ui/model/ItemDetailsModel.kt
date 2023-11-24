@@ -7,13 +7,11 @@ import sheridan.dheripu.prog20082_assignment3.ui.common.formatCurrency
 data class ItemDetailsModel(
     val id: Int,
     val name: String,
-    val price: String,
     val priority: Priority
 ){
     constructor(item: Item): this(
         id = item.id,
         name = item.name,
-        price = formatCurrency(item.price),
         priority = item.priority
     )
 

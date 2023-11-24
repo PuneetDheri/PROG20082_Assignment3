@@ -30,7 +30,6 @@ fun ItemForm(
     itemFormModel: ItemFormModel,
     modifier: Modifier = Modifier,
     onNameChange: (String) -> Unit,
-    onPriceChange: (String) -> Unit,
     onPriorityChange: (Priority) -> Unit,
     enabled: Boolean = true
 ) {
@@ -51,21 +50,7 @@ fun ItemForm(
             enabled = enabled,
             singleLine = true
         )
-        OutlinedTextField(
-            value = itemFormModel.price,
-            onValueChange = onPriceChange,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
-            label = { Text(stringResource(R.string.item_price_req)) },
-            colors = OutlinedTextFieldDefaults.colors(
-                focusedContainerColor = MaterialTheme.colorScheme.secondaryContainer,
-                unfocusedContainerColor = MaterialTheme.colorScheme.secondaryContainer,
-                disabledContainerColor = MaterialTheme.colorScheme.secondaryContainer,
-            ),
-            leadingIcon = { Text(Currency.getInstance(Locale.getDefault()).symbol) },
-            modifier = Modifier.fillMaxWidth(),
-            enabled = enabled,
-            singleLine = true
-        )
+
         if (enabled) {
             Text(
                 text = stringResource(R.string.required_fields),
