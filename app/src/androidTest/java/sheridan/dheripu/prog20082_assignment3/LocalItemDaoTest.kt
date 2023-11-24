@@ -23,8 +23,8 @@ class LocalItemDaoTest {
 
     private lateinit var itemDao: ItemDao
     private lateinit var shoppingListDatabase: ShoppingListDatabase
-    private val item1 = LocalItem(1, "Apples", 10.0, Priority.LOW, false)
-    private val item2 = LocalItem(2, "Bananas", 15.0, Priority.LOW, false)
+    private val item1 = LocalItem(1, "Apples",  Priority.LOW, false)
+    private val item2 = LocalItem(2, "Bananas",  Priority.LOW, false)
 
     @Before
     fun createDb() {
@@ -84,12 +84,12 @@ class LocalItemDaoTest {
     @Throws(Exception::class)
     fun daoUpdateItems_updatesItemsInDB() = runBlocking {
         addTwoItemsToDb()
-        itemDao.updateItem(LocalItem(1, "Apples", 15.0, Priority.LOW, true))
-        itemDao.updateItem(LocalItem(2, "Bananas", 5.0, Priority.LOW, false))
+        itemDao.updateItem(LocalItem(1, "Apples",  Priority.LOW, true))
+        itemDao.updateItem(LocalItem(2, "Bananas",  Priority.LOW, false))
 
         val allItems = itemDao.getAllItemsStream().first()
-        assertEquals(allItems[0], LocalItem(1, "Apples", 15.0, Priority.LOW, true))
-        assertEquals(allItems[1], LocalItem(2, "Bananas", 5.0, Priority.LOW, false))
+        assertEquals(allItems[0], LocalItem(1, "Apples",  Priority.LOW, true))
+        assertEquals(allItems[1], LocalItem(2, "Bananas",  Priority.LOW, false))
     }
 
     private suspend fun addOneItemToDb() {
